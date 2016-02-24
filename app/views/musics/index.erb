@@ -1,0 +1,20 @@
+<div>
+  <h1>Welcome</h1>
+</div>
+
+
+  <div class="videocolumn">
+    <div class="username">
+    </div>  
+    <% @musics.each do |x|%>
+      <div class="thumb">
+        <a class="thumbnail" href="#">
+          <iframe width="400" height="300" src="https://www.youtube.com/embed/<%=x.url%>" frameborder="0" allowfullscreen></iframe></a>
+      </div>
+    <%end%>
+   </div>
+
+ 
+
+
+          

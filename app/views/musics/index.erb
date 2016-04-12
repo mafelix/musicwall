@@ -1,11 +1,15 @@
 <div>
-  <h1>Welcome</h1>
+  <%if current_user%>
+  <h1>Welcome, <%=current_user.email%>!</h1>
+  <%end%>
 </div>
 
 
   <div class="videocolumn">
     <div class="username">
-    </div>  
+
+    </div>    
+    <h2><%=@song_title%></h2>
     <% @musics.each do |x|%>
       <div class="thumb">
         <a class="thumbnail" href="#">
@@ -14,7 +18,8 @@
     <%end%>
    </div>
 
+
+
+
  
 
-
-          

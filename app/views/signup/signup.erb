@@ -1,0 +1,14 @@
+<h3>Sign up for your account!</h3>
+<form method="post" action="/signup/signup">
+  <div>
+    <label>Email:</label>
+    <input type="text" name="email" value="<% @signup && @signup.email%>">
+  </div>
+  <div>
+    <label>Password:</label>
+    <input type="password" name="password" value="<% @signup && @msignup.password%>">
+  </div>
+  <div>
+    <input type="submit" value="Submit">
+  </div>
+</form>

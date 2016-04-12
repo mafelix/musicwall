@@ -11,12 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222224618) do
+ActiveRecord::Schema.define(version: 2017) do
 
   create_table "musics", force: :cascade do |t|
     t.string   "song_title"
     t.string   "author"
     t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "users_id"
+  end
+
+  add_index "musics", ["users_id"], name: "index_musics_on_users_id"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "upvote"
+    t.string   "email"
+    t.string   "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

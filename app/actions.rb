@@ -30,6 +30,10 @@ get '/musics/new' do
   erb :'musics/new'
 end
 
+get '/logout' do
+  session.clear
+  redirect '/'
+end
 post '/musics/new' do
   @music = Music.new(
     song_title: params[:song_title],
@@ -61,5 +65,16 @@ post '/signin/signin' do
   else
     session[:flash] ="Invalid email or password"
     erb :'/signin/signin'
+  end
+end
+
+get '/musics/delete/:id' do
+  @music = Music.find(params[:id])
+  if !@music.nil?
+    @music.delete
+    redirect '/musics/index'
+  else 
+    session[:flash]="Invalid video to delete"
+    redirect '/musics/index'
   end
 end
